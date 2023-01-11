@@ -1,0 +1,52 @@
+[
+    {
+        "model-name": "Staff",
+        "resource-file": "staff.json",
+        "table-name": "staff"
+    },
+    {
+        "model-name": "Pilot",
+        "resource-file": "pilots.json",
+        "table-name": "pilots"
+    },
+    {
+        "model-name": "AirplaneRating",
+        "resource-file": "airplane_ratings.json",
+        "table-name": "airplane_ratings"
+    },
+    {
+        "model-name": "Airplane",
+        "resource-file": "airplanes.json",
+        "table-name": "airplanes"
+    },
+    {
+        "model-name": "PilotRating",
+        "resource-file": "pilot_ratings.json",
+        "table-name": "pilot_ratings"
+    },
+    {
+        "model-name": "Flight",
+        "resource-file": "flights.json",
+        "table-name": "flights"
+    },
+    {
+        "model-name": "Schedule",
+        "resource-file": "schedules.json",
+        "table-name": "schedules"
+    },
+    {
+        "model-name": "Crew",
+        "resource-file": "crews.json",
+        "table-name": "crews"
+    },
+    {
+        "model-name": "Passenger",
+        "resource-file": "passengers.json",
+        "table-name": "passengers"
+    },
+    {
+        "model-name": "Booking",
+        "resource-file": "bookings.json",
+        "table-name": "bookings"
+    }
+]

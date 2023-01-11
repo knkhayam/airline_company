@@ -18,7 +18,7 @@ class PassengerTableSeeder extends Seeder
 
     
         
-        \DB::table('passenger')->insert(array (
+        \DB::table('passengers')->insert(array (
             0 => 
             array (
                 'Passport_No' => 2,

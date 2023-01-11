@@ -92,7 +92,7 @@ class Schedule extends Model
      */
     public function booking()
     {
-        return $this->hasOne('App\Models\Booking','Schedule_Flight_FLIGHTNUM','Flight_FLIGHTNUM');
+        return $this->hasMany('App\Models\Booking','Schedule_Flight_FLIGHTNUM','Flight_FLIGHTNUM');
     }
 
     /**
@@ -102,7 +102,7 @@ class Schedule extends Model
      */
     public function crew()
     {
-        return $this->hasOne('App\Models\Crew','Flight_FLIGHTNUM','Flight_FLIGHTNUM');
+        return $this->hasMany('App\Models\Crew','Flight_FLIGHTNUM','Flight_FLIGHTNUM');
     }
 
     /**

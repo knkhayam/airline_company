@@ -48,5 +48,10 @@
         "model-name": "Booking",
         "resource-file": "bookings.json",
         "table-name": "bookings"
+    },
+    {
+        "model-name": "Connection",
+        "resource-file": "connections.json",
+        "table-name": "connections"
     }
 ]

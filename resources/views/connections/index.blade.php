@@ -19,20 +19,20 @@
         <div class="panel-heading clearfix">
 
             <div class="pull-left">
-                <h4 class="mt-5 mb-5">Bookings</h4>
+                <h4 class="mt-5 mb-5">Connections</h4>
             </div>
 
             <div class="btn-group btn-group-sm pull-right" role="group">
-                <a href="{{ route('bookings.booking.create') }}" class="btn btn-success" title="Create New Booking">
+                <a href="{{ route('connections.connection.create') }}" class="btn btn-success" title="Create New Connection">
                     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                 </a>
             </div>
 
         </div>
         
-        @if(count($bookings) == 0)
+        @if(count($connections) == 0)
             <div class="panel-body text-center">
-                <h4>No Bookings Available.</h4>
+                <h4>No Connections Available.</h4>
             </div>
         @else
         <div class="panel-body panel-body-with-table">
@@ -42,38 +42,34 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Passenger  Passport  No</th>
-                            <th>Type</th>
-                            <th>Origin</th>
-                            <th>Destination</th>
+                            <th>Booking</th>
+                            <th>Schedule  Flight  F L I G H T N U M</th>
 
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($bookings as $booking)
+                    @foreach($connections as $connection)
                         <tr>
-                            <td>{{ $booking->id }}</td>
-                            <td>{{ optional($booking->Passenger)->Passport_No }}</td>
-                            <td>{{ $booking->Type }}</td>
-                            <td>{{ $booking->ORIGIN }}</td>
-                            <td>{{ $booking->DEST }}</td>
+                            <td>{{ $connection->id }}</td>
+                            <td>{{ optional($connection->Booking)->id }}</td>
+                            <td>{{ optional($connection->Schedule)->Flight_FLIGHTNUM }}</td>
 
                             <td>
 
-                                <form method="POST" action="{!! route('bookings.booking.destroy', $booking->id) !!}" accept-charset="UTF-8">
+                                <form method="POST" action="{!! route('connections.connection.destroy', $connection->id) !!}" accept-charset="UTF-8">
                                 <input name="_method" value="DELETE" type="hidden">
                                 {{ csrf_field() }}
 
                                     <div class="btn-group btn-group-xs pull-right" role="group">
-                                        <a href="{{ route('bookings.booking.show', $booking->id ) }}" class="btn btn-info" title="Show Booking">
+                                        <a href="{{ route('connections.connection.show', $connection->id ) }}" class="btn btn-info" title="Show Connection">
                                             <span class="glyphicon glyphicon-open" aria-hidden="true"></span>
                                         </a>
-                                        <a href="{{ route('bookings.booking.edit', $booking->id ) }}" class="btn btn-primary" title="Edit Booking">
+                                        <a href="{{ route('connections.connection.edit', $connection->id ) }}" class="btn btn-primary" title="Edit Connection">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                                         </a>
 
-                                        <button type="submit" class="btn btn-danger" title="Delete Booking" onclick="return confirm(&quot;Click Ok to delete Booking.&quot;)">
+                                        <button type="submit" class="btn btn-danger" title="Delete Connection" onclick="return confirm(&quot;Click Ok to delete Connection.&quot;)">
                                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                         </button>
                                     </div>
@@ -90,7 +86,7 @@
         </div>
 
         <div class="panel-footer">
-            {!! $bookings->render() !!}
+            {!! $connections->render() !!}
         </div>
         
         @endif

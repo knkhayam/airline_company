@@ -72,6 +72,16 @@ class Airplane extends Model
         return $this->hasOne('App\Models\Schedule','Airplane_NUMSER','NUMSER');
     }
 
+    public function getEligiblePilotsAttribute()
+    {
+        
+        $pilots = [];
+        foreach($this->AirplaneRating->pilotRating as $pr)
+        {
+            $pilots[] = $pr->Pilot->Staff->SURNAME . "(" . $pr->Pilot->Staff_EMPNUM . ")";
+        }
+        return $pilots;
+    }
 
 
 }

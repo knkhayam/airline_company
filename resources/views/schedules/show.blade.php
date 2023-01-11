@@ -54,6 +54,41 @@
 
         </dl>
 
+        <hr />
+        <h4>Crew Staff</h4>
+        <table class="table table-striped ">
+                    <thead>
+                        <tr>
+                            <th>EMPNUM</th>
+                            <th>SURNAME</th>
+                            <th>NAME</th>
+                            <th>ADDRESS</th>
+                            <th>P H O N E</th>
+                            <th>S A L A R Y</th>
+                            <th>Type</th>
+
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($schedule->crew as $c)
+                    @php $staff = $c->Staff; @endphp
+                        <tr>
+                            <td>{{ $staff->EMPNUM }}</td>
+                            <td>{{ $staff->SURNAME }}</td>
+                            <td>{{ $staff->NAME }}</td>
+                            <td>{{ $staff->ADDRESS }}</td>
+                            <td>{{ $staff->PHONE }}</td>
+                            <td>{{ $staff->SALARY }}</td>
+                            <td>{{ $staff->Type }}</td>
+                            
+                           
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+
+
     </div>
 </div>
 

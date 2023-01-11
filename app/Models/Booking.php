@@ -33,8 +33,7 @@ class Booking extends Model
      * @var array
      */
     protected $fillable = [
-                  'Passenger_Passport_No',
-                  'Schedule_Flight_FLIGHTNUM'
+                  'Passenger_Passport_No'
               ];
 
     /**
@@ -62,15 +61,40 @@ class Booking extends Model
     }
 
     /**
-     * Get the Schedule for this model.
+     * Get the connection for this model.
      *
-     * @return App\Models\Schedule
+     * @return App\Models\Connection
      */
-    public function Schedule()
+    public function connection1()
     {
-        return $this->belongsTo('App\Models\Schedule','Schedule_Flight_FLIGHTNUM','Flight_FLIGHTNUM');
+        return $this->hasMany('App\Models\Connection','booking_id','id');
     }
 
+    public function getTypeAttribute()
+    {
+        if(count($this->connection1) == 0)
+            return "Booking Requires at least one connection";
+
+        return count($this->connection1) > 1 ? "Connecting" : "Direct";
+    }
+
+    public function getOriginAttribute()
+    {
+        $first = $this->connection1->first();
+        if($first)
+        {
+            return $first->Schedule->Flight->ORIGIN;
+        }
+    }
+
+    public function getDestAttribute()
+    {
+        $last = $this->connection1->last();
+        if($last)
+        {
+            return $last->Schedule->Flight->DEST;
+        }
+    }
 
 
 }

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AirplaneRating extends Model
+class Connection extends Model
 {
     
     /**
@@ -18,14 +18,17 @@ class AirplaneRating extends Model
      *
      * @var string
      */
-    protected $table = 'airplane_ratings';
+    protected $table = 'connections';
 
     /**
     * The database primary key value.
     *
     * @var string
     */
-    protected $primaryKey = 'Rating_Number';
+    protected $primaryKey = 'id';
+    protected $keyType = 'string';
+    public $incrementing = false;
+
 
     /**
      * Attributes that should be mass-assignable.
@@ -33,8 +36,8 @@ class AirplaneRating extends Model
      * @var array
      */
     protected $fillable = [
-                  'Name',
-                  'Description'
+                  'booking_id',
+                  'Schedule_Flight_FLIGHTNUM'
               ];
 
     /**
@@ -52,23 +55,23 @@ class AirplaneRating extends Model
     protected $casts = [];
     
     /**
-     * Get the airplane for this model.
+     * Get the Booking for this model.
      *
-     * @return App\Models\Airplane
+     * @return App\Models\Booking
      */
-    public function airplane()
+    public function Booking()
     {
-        return $this->hasMany('App\Models\Airplane','Airplane_Rating_Number','Rating_Number');
+        return $this->belongsTo('App\Models\Booking','booking_id','id');
     }
 
     /**
-     * Get the pilotRating for this model.
+     * Get the Schedule for this model.
      *
-     * @return App\Models\PilotRating
+     * @return App\Models\Schedule
      */
-    public function pilotRating()
+    public function Schedule()
     {
-        return $this->hasMany('App\Models\PilotRating','Airplane_Rating_Number','Rating_Number');
+        return $this->belongsTo('App\Models\Schedule','Schedule_Flight_FLIGHTNUM','Flight_FLIGHTNUM');
     }
 
 

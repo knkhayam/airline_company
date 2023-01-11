@@ -59,9 +59,9 @@ class Passenger extends Model
      *
      * @return App\Models\Booking
      */
-    public function booking()
+    public function bookings()
     {
-        return $this->hasOne('App\Models\Booking','Passenger_Passport_No','Passport_No');
+        return $this->hasMany('App\Models\Booking','Passenger_Passport_No','Passport_No');
     }
 
 

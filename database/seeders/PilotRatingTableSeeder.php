@@ -18,7 +18,7 @@ class PilotRatingTableSeeder extends Seeder
 
        
         
-        \DB::table('pilot_rating')->insert(array (
+        \DB::table('pilot_ratings')->insert(array (
             0 => 
             array (
                 'id' => 1,

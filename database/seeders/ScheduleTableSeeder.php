@@ -18,7 +18,7 @@ class ScheduleTableSeeder extends Seeder
 
        
         
-        \DB::table('schedule')->insert(array (
+        \DB::table('schedules')->insert(array (
             0 => 
             array (
                 'id' => 1,

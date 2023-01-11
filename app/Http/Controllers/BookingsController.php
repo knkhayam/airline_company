@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\BookingsFormRequest;
 use App\Models\Booking;
 use App\Models\Passenger;
-use App\Models\Schedule;
 use Exception;
 
 class BookingsController extends Controller
@@ -19,7 +18,7 @@ class BookingsController extends Controller
      */
     public function index()
     {
-        $bookings = Booking::with('passenger','schedule')->paginate(25);
+        $bookings = Booking::with('passenger')->paginate(25);
 
         return view('bookings.index', compact('bookings'));
     }
@@ -32,9 +31,8 @@ class BookingsController extends Controller
     public function create()
     {
         $Passengers = Passenger::pluck('Passport_No','Passport_No')->all();
-$Schedules = Schedule::pluck('Flight_FLIGHTNUM','Flight_FLIGHTNUM')->all();
         
-        return view('bookings.create', compact('Passengers','Schedules'));
+        return view('bookings.create', compact('Passengers'));
     }
 
     /**
@@ -70,7 +68,7 @@ $Schedules = Schedule::pluck('Flight_FLIGHTNUM','Flight_FLIGHTNUM')->all();
      */
     public function show($id)
     {
-        $booking = Booking::with('passenger','schedule')->findOrFail($id);
+        $booking = Booking::with('passenger')->findOrFail($id);
 
         return view('bookings.show', compact('booking'));
     }
@@ -86,9 +84,8 @@ $Schedules = Schedule::pluck('Flight_FLIGHTNUM','Flight_FLIGHTNUM')->all();
     {
         $booking = Booking::findOrFail($id);
         $Passengers = Passenger::pluck('Passport_No','Passport_No')->all();
-$Schedules = Schedule::pluck('Flight_FLIGHTNUM','Flight_FLIGHTNUM')->all();
 
-        return view('bookings.edit', compact('booking','Passengers','Schedules'));
+        return view('bookings.edit', compact('booking','Passengers'));
     }
 
     /**

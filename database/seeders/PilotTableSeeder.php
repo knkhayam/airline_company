@@ -18,7 +18,7 @@ class PilotTableSeeder extends Seeder
 
       
         
-        \DB::table('pilot')->insert(array (
+        \DB::table('pilots')->insert(array (
             0 => 
             array (
                 'Staff_EMPNUM' => 300,

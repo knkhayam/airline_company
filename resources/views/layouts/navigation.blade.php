@@ -8,4 +8,5 @@
 <li class="{{Route::is('crews*') ? 'active' : ''}}"><a href="{{route('crews.crew.index')}}">Crew</a></li>
 <li class="{{Route::is('passengers*') ? 'active' : ''}}"><a href="{{route('passengers.passenger.index')}}">Passengers</a></li>
 <li class="{{Route::is('bookings*') ? 'active' : ''}}"><a href="{{route('bookings.booking.index')}}">Bookings</a></li>
+<li class="{{Route::is('connections*') ? 'active' : ''}}"><a href="{{route('connections.connection.index')}}">Connections</a></li>
 

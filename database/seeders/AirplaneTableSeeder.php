@@ -17,7 +17,7 @@ class AirplaneTableSeeder extends Seeder
         
 
         
-        \DB::table('airplane')->insert(array (
+        \DB::table('airplanes')->insert(array (
             0 => 
             array (
                 'NUMSER' => 1,

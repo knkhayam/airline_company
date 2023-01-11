@@ -43,6 +43,7 @@
                         <tr>
                             <th>Staff  E M P N U M</th>
                             <th>SURNAME</th>
+                            <th>Ratings</th>
 
                             <th></th>
                         </tr>
@@ -52,6 +53,7 @@
                         <tr>
                             <td>{{ optional($pilot->Staff)->EMPNUM }}</td>
                             <td>{{ optional($pilot->Staff)->SURNAME }}</td>
+                            <td>{{ optional($pilot)->Rating_Name }}</td>
                             
 
                             <td>

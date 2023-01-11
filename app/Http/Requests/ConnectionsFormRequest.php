@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 
 
-class BookingsFormRequest extends FormRequest
+class ConnectionsFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,8 @@ class BookingsFormRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'Passenger_Passport_No' => 'required',
+            'booking_id' => 'required',
+            'Schedule_Flight_FLIGHTNUM' => 'required|string|min:1|max:15',
         ];
 
         return $rules;
@@ -39,7 +40,7 @@ class BookingsFormRequest extends FormRequest
      */
     public function getData()
     {
-        $data = $this->only(['Passenger_Passport_No']);
+        $data = $this->only(['booking_id', 'Schedule_Flight_FLIGHTNUM']);
 
 
 

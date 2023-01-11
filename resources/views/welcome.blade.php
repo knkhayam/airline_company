@@ -30,9 +30,12 @@
             <div class="table-responsive">
 
                 <div class="panel">
-                    <div class="panel-body">
+                    <div class="panel-body text-center">
                     This is an empty dashboard ! <br />
                     You can visit other Tabs like staff to check system's features !
+
+                    <br />
+                    <img style="width:90%" src="{{asset('images/airline.png')}}">
                     </div>
                 </div>
 

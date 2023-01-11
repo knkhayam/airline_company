@@ -52,6 +52,56 @@
 
         </dl>
 
+        <hr />
+        <h4>Bookings</h4>
+        <table class="table table-striped ">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Passenger  Passport  No</th>
+                            <th>Type</th>
+                            <th>Origin</th>
+                            <th>Destination</th>
+
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($passenger->bookings as $booking)
+                        <tr>
+                            <td>{{ $booking->id }}</td>
+                            <td>{{ optional($booking->Passenger)->Passport_No }}</td>
+                            <td>{{ $booking->Type }}</td>
+                            <td>{{ $booking->ORIGIN }}</td>
+                            <td>{{ $booking->DEST }}</td>
+
+                            <td>
+
+                                <form method="POST" action="{!! route('bookings.booking.destroy', $booking->id) !!}" accept-charset="UTF-8">
+                                <input name="_method" value="DELETE" type="hidden">
+                                {{ csrf_field() }}
+
+                                    <div class="btn-group btn-group-xs pull-right" role="group">
+                                        <a href="{{ route('bookings.booking.show', $booking->id ) }}" class="btn btn-info" title="Show Booking">
+                                            <span class="glyphicon glyphicon-open" aria-hidden="true"></span>
+                                        </a>
+                                        <a href="{{ route('bookings.booking.edit', $booking->id ) }}" class="btn btn-primary" title="Edit Booking">
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                        </a>
+
+                                        <button type="submit" class="btn btn-danger" title="Delete Booking" onclick="return confirm(&quot;Click Ok to delete Booking.&quot;)">
+                                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+
+                                </form>
+                                
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+
     </div>
 </div>
 

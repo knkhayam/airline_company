@@ -46,6 +46,10 @@
             <dt>Airplane  Rating  Number</dt>
             <dd>{{ optional($airplane->AirplaneRating)->Name }}</dd>
 
+            <dt>Pilots Eligible to Fly:</dt>
+            @foreach($airplane->eligible_pilots as $ep)
+            <dd>{{ $ep }}</dd>
+            @endforeach
         </dl>
 
     </div>

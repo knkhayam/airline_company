@@ -17,7 +17,7 @@ class CrewTableSeeder extends Seeder
         
 
         
-        \DB::table('crew')->insert(array (
+        \DB::table('crews')->insert(array (
             0 => 
             array (
                 'id' => 3,

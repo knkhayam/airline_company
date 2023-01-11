@@ -11,6 +11,7 @@ use App\Http\Controllers\SchedulesController;
 use App\Http\Controllers\CrewsController;
 use App\Http\Controllers\PassengersController;
 use App\Http\Controllers\BookingsController;
+use App\Http\Controllers\ConnectionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -215,4 +216,23 @@ Route::group([
          ->name('bookings.booking.update')->where('id', '[0-9]+');
     Route::delete('/booking/{booking}',[BookingsController::class, 'destroy'])
          ->name('bookings.booking.destroy')->where('id', '[0-9]+');
+});
+
+Route::group([
+    'prefix' => 'connections',
+], function () {
+    Route::get('/', [ConnectionsController::class, 'index'])
+         ->name('connections.connection.index');
+    Route::get('/create', [ConnectionsController::class, 'create'])
+         ->name('connections.connection.create');
+    Route::get('/show/{connection}',[ConnectionsController::class, 'show'])
+         ->name('connections.connection.show');
+    Route::get('/{connection}/edit',[ConnectionsController::class, 'edit'])
+         ->name('connections.connection.edit');
+    Route::post('/', [ConnectionsController::class, 'store'])
+         ->name('connections.connection.store');
+    Route::put('connection/{connection}', [ConnectionsController::class, 'update'])
+         ->name('connections.connection.update');
+    Route::delete('/connection/{connection}',[ConnectionsController::class, 'destroy'])
+         ->name('connections.connection.destroy');
 });

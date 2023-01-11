@@ -16,7 +16,7 @@ class FlightTableSeeder extends Seeder
     {
         
 
-        \DB::table('flight')->insert(array (
+        \DB::table('flights')->insert(array (
             0 => 
             array (
                 'FLIGHTNUM' => 'Alice.',

@@ -17,7 +17,7 @@ class BookingTableSeeder extends Seeder
         
 
         
-        \DB::table('booking')->insert(array (
+        \DB::table('bookings')->insert(array (
             0 => 
             array (
                 'id' => 8,

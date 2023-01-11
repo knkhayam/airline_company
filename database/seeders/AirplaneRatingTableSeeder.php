@@ -16,7 +16,7 @@ class AirplaneRatingTableSeeder extends Seeder
     {
         
         
-        \DB::table('airplane_rating')->insert(array (
+        \DB::table('airplane_ratings')->insert(array (
             0 => 
             array (
                 'Rating_Number' => 93,

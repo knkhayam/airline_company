@@ -67,7 +67,7 @@ class Pilot extends Model
      */
     public function pilotRating()
     {
-        return $this->hasOne('App\Models\PilotRating','Pilot_EMPNUM','Staff_EMPNUM');
+        return $this->hasMany('App\Models\PilotRating','Pilot_EMPNUM','Staff_EMPNUM');
     }
 
     /**
@@ -80,6 +80,17 @@ class Pilot extends Model
         return $this->hasOne('App\Models\Schedule','Pilot_EMPNUM','Staff_EMPNUM');
     }
 
+    public function getRatingNameAttribute()
+    {
+        $ratings = [];
+
+        foreach($this->pilotRating as $pr)
+        {
+
+            $ratings[] = $pr->AirplaneRating->Name;
+        }
+        return join(", ", $ratings);
+    }
 
 
 }

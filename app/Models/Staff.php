@@ -74,6 +74,10 @@ class Staff extends Model
         return $this->hasOne('App\Models\Pilot','Staff_EMPNUM','EMPNUM');
     }
 
+    public function getTypeAttribute()
+    {
+        return $this->pilot == null ? 'Staff' : 'Pilot';
+    }
 
 
 }

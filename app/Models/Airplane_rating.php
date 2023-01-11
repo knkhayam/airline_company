@@ -8,6 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Airplane_rating extends Model
 {
     use HasFactory;
-    public $table='Airplane_rating';
     public $timestamps = false;
 }

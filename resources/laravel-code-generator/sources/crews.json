@@ -8,7 +8,7 @@
             "options": {},
             "html-value": null,
             "validation": "",
-            "is-on-index": false,
+            "is-on-index": true,
             "is-on-show": false,
             "is-on-form": false,
             "data-type": "int",
@@ -74,7 +74,7 @@
                     "Staff_EMPNUM",
                     "EMPNUM"
                 ],
-                "field": "NAME"
+                "field": "EMPNUM"
             },
             "foreign-constraint": {
                 "field": "Staff_EMPNUM",

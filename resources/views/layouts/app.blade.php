@@ -9,6 +9,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('/css/jquery.dataTables.min.css')}}">
     
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 
@@ -112,6 +113,7 @@
         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+    <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
     {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
     <script type="text/javascript">
         $(function(){
@@ -178,6 +180,11 @@
 
         });
     </script>
+    <script>
+        $(document).ready( function () {
+    $('table').DataTable();
+} );
+        </script>
 
 </body>
 </html>

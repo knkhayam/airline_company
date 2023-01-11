@@ -8,9 +8,9 @@
             "options": {},
             "html-value": null,
             "validation": "",
-            "is-on-index": false,
-            "is-on-show": false,
-            "is-on-form": false,
+            "is-on-index": true,
+            "is-on-show": true,
+            "is-on-form": true,
             "data-type": "string",
             "data-type-params": [
                 15

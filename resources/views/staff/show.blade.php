@@ -39,6 +39,8 @@
 
     <div class="panel-body">
         <dl class="dl-horizontal">
+            <dt>EMPNUM</dt>
+            <dd>{{ $staff->EMPNUM }}</dd>
             <dt>SURNAME</dt>
             <dd>{{ $staff->SURNAME }}</dd>
             <dt>NAME</dt>

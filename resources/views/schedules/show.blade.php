@@ -67,7 +67,7 @@
                             <th>S A L A R Y</th>
                             <th>Type</th>
 
-                            <th></th>
+                          
                         </tr>
                     </thead>
                     <tbody>
@@ -87,6 +87,34 @@
                     @endforeach
                     </tbody>
                 </table>
+        <h4>Passengers</h4>
+        <table class="table table-striped ">
+            <thead>
+                <tr>
+                    <th>Passport  No</th>
+                    <th>S U R N A M E</th>
+                    <th>N A M E</th>
+                    <th>A D D R E S S</th>
+                    <th>P H O N E</th>
+
+                   
+                </tr>
+            </thead>
+            <tbody>
+            @foreach($schedule->connections as $c)
+            @php $passenger = $c->booking->passenger; @endphp
+                <tr>
+                    <td>{{ $passenger->Passport_No }}</td>
+                    <td>{{ $passenger->SURNAME }}</td>
+                    <td>{{ $passenger->NAME }}</td>
+                    <td>{{ $passenger->ADDRESS }}</td>
+                    <td>{{ $passenger->PHONE }}</td>
+
+                   
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
 
 
     </div>

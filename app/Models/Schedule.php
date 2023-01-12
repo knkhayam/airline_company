@@ -90,9 +90,9 @@ class Schedule extends Model
      *
      * @return App\Models\Booking
      */
-    public function booking()
+    public function connections()
     {
-        return $this->hasMany('App\Models\Booking','Schedule_Flight_FLIGHTNUM','Flight_FLIGHTNUM');
+        return $this->hasMany(Connection::class,'Schedule_Flight_FLIGHTNUM','Flight_FLIGHTNUM');
     }
 
     /**
